@@ -4,7 +4,6 @@
 
 #include "include/NoItem.h"
 #include "include/ListaItem.h"
-#include "include/Item.h"
 #include "include/Livro.h"
 #include "include/Roupa.h"
 #include "include/Eletronico.h"
@@ -18,8 +17,8 @@ using namespace std;
 
 int main() {
 	ListaItem<Livro> lista_livros;
-	ListaItem<Roupa> lista_roupas;
-	ListaItem<Eletronico> lista_eletronicos;
+	//ListaItem<Roupa> lista_roupas;
+	//ListaItem<Eletronico> lista_eletronicos;
 	Livro livro1, livro2;
 	Roupa roupa;
 	Eletronico eletronico;
@@ -33,10 +32,12 @@ int main() {
 		"NVIDIA", "GTX 1660 6GB", "Galax", "Mto braba!");
 	lista_livros.insereNo(livro1);
 	lista_livros.insereNo(livro2);
+	lista_livros.exibeLista();
+	/*lista_livros.insereNo(livro2);
 	lista_roupas.insereNo(roupa);
 	lista_eletronicos.insereNo(eletronico);
 	lista_livros.exibeLista();
 	lista_roupas.exibeLista();
-	lista_eletronicos.exibeLista();
+	lista_eletronicos.exibeLista();*/
 	return 1;
 }

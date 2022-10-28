@@ -10,8 +10,3 @@ NoItem<T>::~NoItem() {
 	delete prox;
 }
 
-template <typename T>
-void NoItem<T>::colocaItem(T d) {
-	item = d;
-	prox = nullptr;
-}

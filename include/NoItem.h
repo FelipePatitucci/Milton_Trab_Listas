@@ -10,8 +10,9 @@ public:
 
     NoItem();
     virtual ~NoItem();
-    void colocaItem(T d);
+    NoItem(T d) {item = d; prox = nullptr;}
     Item Get(void) { return item; }
+    void Print(void) {item.infos();} // só para testes
 
 protected:
 

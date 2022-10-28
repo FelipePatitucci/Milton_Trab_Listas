@@ -9,7 +9,7 @@ class ListaItem
     public:
         ListaItem();
         virtual ~ListaItem();
-        void Put(L *ptr_novo);
+        void Put(NoItem<L> *ptr_novo);
         void insereNo(L);
         void exibeLista(void);
 

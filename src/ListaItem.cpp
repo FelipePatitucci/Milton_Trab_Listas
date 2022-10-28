@@ -20,22 +20,21 @@ ListaItem<L>::~ListaItem()
 }
 
 // usada apenas indiretamente pela insereNo
-
 template <typename L>
 void ListaItem<L>::Put(NoItem<L> *ptr_novo) //era NoItem<T>
 {
     if ( topo == nullptr )
         topo = fim = ptr_novo;
-    else
+    else {
         fim->prox = ptr_novo;
-        fim = ptr_novo;
+        fim = ptr_novo; }
 }
 
 
 template <typename L>
-void ListaItem<L>::insereNo(L no_item)
+void ListaItem<L>::insereNo(L item)
 {
-    NoItem<L> *ptr_novo = new NoItem<L>(no_item);
+    NoItem<L> *ptr_novo = new NoItem<L>(item);
     Put(ptr_novo);
     tamanho ++;
 }
