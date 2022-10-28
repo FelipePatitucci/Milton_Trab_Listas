@@ -1,0 +1,10 @@
+## Arquivos de IDEs
+.vscode
+
+## Objetos da compilação
+builds
+*.o
+
+# Arquivos Executaveis
+e-commerce
+a.out
