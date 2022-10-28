@@ -23,7 +23,7 @@ public:
 		string t_autor, int t_numeroPaginas, string t_genero,
 		string t_idioma, int t_anoLancamento);
 
-	void infosItem(void);
+	void infos(void);
 
 protected:
 

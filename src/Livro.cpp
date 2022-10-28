@@ -10,7 +10,7 @@ Livro::~Livro() {
 	//dtor
 };
 
-void Livro::infosItem(void) {
+void Livro::infos(void) {
 	Item::infos();
 	cout << "Autor: " << autor << endl;
 	cout << "Gênero: " << genero << endl;
