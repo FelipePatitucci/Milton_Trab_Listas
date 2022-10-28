@@ -3,20 +3,21 @@
 
 #include "NoItem.h"
 
+template <typename L>
 class ListaItem
 {
     public:
         ListaItem();
         virtual ~ListaItem();
-        void Put(NoItem *ptr_novo);
-        void insereNo(NoItem d);
+        void Put(L *ptr_novo);
+        void insereNo(L);
         void exibeLista(void);
 
     protected:
 
     private:
-        NoItem *topo;
-        NoItem *fim;
+        NoItem<L> *topo;
+        NoItem<L> *fim;
         int tamanho;
 };
 

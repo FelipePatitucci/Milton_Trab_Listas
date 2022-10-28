@@ -10,7 +10,7 @@ Eletronico::~Eletronico() {
 	//dtor
 };
 
-void Eletronico::infosItem(void) {
+void Eletronico::infos(void) {
 	Item::infos();
 	cout << "Marca: " << marca << endl;
 	cout << "Modelo: " << modelo << endl;

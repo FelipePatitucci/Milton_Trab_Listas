@@ -22,7 +22,7 @@ public:
 		string t_marca, string t_modelo, string t_fabricante,
 		string t_descricao);
 
-	void infosItem(void);
+	void infos(void);
 
 protected:
 

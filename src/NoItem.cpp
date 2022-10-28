@@ -1,14 +1,17 @@
 #include "../include/NoItem.h"
 
-NoItem::NoItem() {
+template <typename T>
+NoItem<T>::NoItem() {
 	prox = nullptr;
 }
 
-NoItem::~NoItem() {
+template <typename T>
+NoItem<T>::~NoItem() {
 	delete prox;
 }
 
-void NoItem::colocaItem(Item d) {
+template <typename T>
+void NoItem<T>::colocaItem(T d) {
 	item = d;
 	prox = nullptr;
 }

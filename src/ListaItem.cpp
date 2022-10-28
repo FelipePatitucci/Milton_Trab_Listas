@@ -4,37 +4,46 @@
 #include <string>
 using namespace std;
 
-ListaItem::ListaItem()
+template <typename L>
+ListaItem<L>::ListaItem()
 {
     topo = nullptr;
     fim = nullptr;
     tamanho = 0;
 }
 
-ListaItem::~ListaItem()
+template <typename L>
+ListaItem<L>::~ListaItem()
 {
-
+    delete topo;
+    delete fim;
 }
 
 // usada apenas indiretamente pela insereNo
-void ListaItem::Put(NoItem *ptr_novo)
+
+template <typename L>
+void ListaItem<L>::Put(NoItem<L> *ptr_novo) //era NoItem<T>
 {
     if ( topo == nullptr )
         topo = fim = ptr_novo;
     else
         fim->prox = ptr_novo;
-    fim = ptr_novo;
+        fim = ptr_novo;
 }
 
-void ListaItem::insereNo(NoItem no_item)
+
+template <typename L>
+void ListaItem<L>::insereNo(L no_item)
 {
-    NoItem *ptr_novo = new NoItem(no_item);
+    NoItem<L> *ptr_novo = new NoItem<L>(no_item);
     Put(ptr_novo);
+    tamanho ++;
 }
 
-void ListaItem::exibeLista(void)
+template <typename L>
+void ListaItem<L>::exibeLista(void)
 {
-    NoItem *aux = nullptr; //teste
+    NoItem<L> *aux = nullptr; //teste
 
     aux = topo;
     while( aux != nullptr )

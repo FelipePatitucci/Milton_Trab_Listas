@@ -10,7 +10,7 @@ Roupa::~Roupa() {
 	//dtor
 };
 
-void Roupa::infosItem(void) {
+void Roupa::infos(void) {
 	Item::infos();
 	cout << "Marca: " << marca << endl;
 	cout << "Gênero: " << genero << endl;

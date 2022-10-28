@@ -3,21 +3,23 @@
 
 #include "Item.h"
 
+template <typename T>
 class NoItem
 {
 public:
 
     NoItem();
     virtual ~NoItem();
-    void colocaItem(Item d);
+    void colocaItem(T d);
     Item Get(void) { return item; }
 
 protected:
 
 private:
 
-    Item item;
+    T item;
     NoItem *prox; 
+    template <typename L>
     friend class ListaItem;
 };
 

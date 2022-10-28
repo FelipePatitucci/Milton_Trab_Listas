@@ -23,7 +23,7 @@ public:
 		string t_marca, string t_genero, string t_tamanho,
 		string t_cor, string t_material);
 
-	void infosItem(void);
+	void infos(void);
 
 protected:
 
