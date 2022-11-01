@@ -5,25 +5,32 @@
 
 using namespace std;
 
+enum TipoConta
+{
+	CLIENTE,
+	LOJA
+};
+
 class Conta
 {
 	private:
 
 	protected:
-		string	nome;
-		string	senha;
-		string	estado;
-		string	cidade;
-		string	cep;
-		string	complemento;
-		string	email;
-		string	telefone;
+		TipoConta	conta;
+		string		nome;
+		string		senha;
+		string		estado;
+		string		cidade;
+		string		cep;
+		string		complemento;
+		string		email;
+		string		telefone;
 
 	public:
 		Conta(void);
-		Conta(string nome, string senha, string estado, string cidade,
+		Conta(TipoConta conta, string nome, string senha, string estado, string cidade,
 			string cep, string complemento, string email, string telefone);
-		~Conta(void);
+		virtual ~Conta(void);
 
 		virtual void	infos(void) = 0;
 

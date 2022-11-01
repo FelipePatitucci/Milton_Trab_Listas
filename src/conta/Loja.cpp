@@ -4,17 +4,19 @@ Loja::Loja(void): Conta() {
 	cnpj = "";
 }
 
-Loja::Loja(string nome, string senha, string estado, string cidade,
+Loja::Loja(TipoConta conta, string nome, string senha, string estado, string cidade,
 	string cep, string complemento, string email, string telefone, string cnpj):
-	Conta(nome, senha, estado, cidade, cep, complemento, email, telefone) {
+	Conta(conta, nome, senha, estado, cidade, cep, complemento, email, telefone) {
 	this->cnpj = cnpj;
 }
 
 Loja::~Loja(void) {
 	return ;
-};
+}
 
-void Loja::infos(void) {
+void	Loja::infos(void) {
+	cout << "---------------------------" << endl;
+	cout << "Tipo de Conta: " << (conta == CLIENTE? "Cliente" : "Loja") << endl;
 	cout << "---------------------------" << endl;
 	cout << "Nome: " << nome << endl;
 	cout << "Estado: " << estado << endl;
@@ -24,5 +26,12 @@ void Loja::infos(void) {
 	cout << "Email " << email << endl;
 	cout << "Telefone " << telefone << endl;
 	cout << "CNPJ " << cnpj << endl;
-	cout << "---------------------------" << endl;
-};
+	cout << "Produtos:" << endl;
+	produtos.exibeLista();
+	cout << "---------------------------" << endl << endl;
+}
+
+void	Loja::addItem(Item *item)
+{
+	produtos.add(item);
+}

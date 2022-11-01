@@ -6,7 +6,7 @@ Livro::Livro(void): Item()  {
 	genero = "";
 	idioma = "";
 	anoLancamento = 0;
-};
+}
 
 Livro::Livro(int id, string nome, double preco, string loja,
 			string autor, int numeroPaginas, string genero, string idioma,
@@ -17,14 +17,14 @@ Livro::Livro(int id, string nome, double preco, string loja,
 	this->genero = genero;
 	this->idioma = idioma;
 	this->anoLancamento = anoLancamento;
-};
+}
 
 Livro::~Livro(void) {
 	return ;
-};
+}
 
 void Livro::infos(void) {
-	cout << "---------------------------" << endl;
+	cout << endl;
 	cout << "Nome: " << nome << endl;
 	cout << "Preço: " << preco << endl;
 	cout << "Autor: " << autor << endl;
@@ -32,5 +32,5 @@ void Livro::infos(void) {
 	cout << "Idioma: " << idioma << endl;
 	cout << "Número de Páginas: " << numeroPaginas << endl;
 	cout << "Ano de Lançamento: " << anoLancamento << endl;
-	cout << "---------------------------" << endl;
-};
+	cout << endl;
+}
