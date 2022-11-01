@@ -64,13 +64,13 @@ void	Lista<L>::add(L *novo)
 template <typename L>
 L*		Lista<L>::get(int index)
 {
-	No<L> aux =	nullptr;
+	No<L>*	aux =	nullptr;
 
 	if (index >= 0 && index < tamanho)
 	{
 		aux = topo;
 		while (index--)
-			aux = aux->prev;
+			aux = aux->prox;
 		return aux->item;
 	}
 	else

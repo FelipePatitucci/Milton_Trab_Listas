@@ -7,16 +7,16 @@ class Cliente : public Conta
 {
 	private:
 		string	cpf;
-		string	carteira;
+		double	carteira;
 		string	cartaoConfigurado;
 
 	protected:
 
 	public:
 		Cliente(void);
-		Cliente(string nome, string senha, string estado, string cidade,
+		Cliente(TipoConta conta, string nome, string senha, string estado, string cidade,
 			string cep, string complemento, string email, string telefone,
-			string cpf, string carteira, string cartaoConfigurado);
+			string cpf, double carteira, string cartaoConfigurado);
 		~Cliente(void);
 
 		void	infos(void);

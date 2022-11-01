@@ -3,12 +3,9 @@
 
 #include <bits/stdc++.h>
 
-#include "Lista.hpp"
-#include "Livro.hpp"
-#include "Roupa.hpp"
-#include "Eletronico.hpp"
-
 #include "Cliente.hpp"
 #include "Loja.hpp"
+
+#include "ECommerce.hpp"
 
 #endif

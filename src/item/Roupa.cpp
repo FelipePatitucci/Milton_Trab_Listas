@@ -6,7 +6,7 @@ Roupa::Roupa(void): Item() {
 	genero = "";
 	cor = "";
 	material = "";
-};
+}
 
 Roupa::Roupa(int id, string nome, double preco, string loja,
 			string marca, string genero, string tamanho, string cor,
@@ -17,14 +17,14 @@ Roupa::Roupa(int id, string nome, double preco, string loja,
 	this->genero = genero;
 	this->cor = cor;
 	this->material = material;
-};
+}
 
 Roupa::~Roupa() {
 	return ;
-};
+}
 
 void Roupa::infos(void) {
-	cout << "---------------------------" << endl;
+	cout << endl;
 	cout << "Nome: " << nome << endl;
 	cout << "Preço: " << preco << endl;
 	cout << "Marca: " << marca << endl;
@@ -32,5 +32,4 @@ void Roupa::infos(void) {
 	cout << "Tamanho: " << tamanho << endl;
 	cout << "Cor: " << cor << endl;
 	cout << "Material: " << material << endl;
-	cout << "---------------------------" << endl;
-};
+}

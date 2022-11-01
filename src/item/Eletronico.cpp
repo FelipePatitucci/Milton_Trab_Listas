@@ -5,7 +5,7 @@ Eletronico::Eletronico(void): Item() {
 	modelo = "";
 	fabricante = "";
 	descricao = "";
-};
+}
 
 Eletronico::Eletronico(int id, string nome, double preco, string loja,
 			string marca, string modelo, string fabricante, string descricao):
@@ -14,19 +14,19 @@ Eletronico::Eletronico(int id, string nome, double preco, string loja,
 	this->modelo = modelo;
 	this->fabricante = fabricante;
 	this->descricao = descricao;
-};
+}
 
 Eletronico::~Eletronico(void) {
 	return ;
-};
+}
 
 void Eletronico::infos(void) {
-	cout << "---------------------------" << endl;
+	cout << endl;
 	cout << "Nome: " << nome << endl;
 	cout << "Preço: " << preco << endl;
 	cout << "Marca: " << marca << endl;
 	cout << "Modelo: " << modelo << endl;
 	cout << "Fabricante: " << fabricante << endl;
 	cout << "Descrição: " << descricao << endl;
-	cout << "---------------------------" << endl;
-};
+	cout << endl;
+}

@@ -6,7 +6,7 @@ INCD_DIR=	-I ./include \
 INCD	=	include.hpp \
 			Lista.hpp No.hpp \
 			Item.hpp Livro.hpp Roupa.hpp Eletronico.hpp \
-			Conta.hpp Cliente.hpp Loja.hpp
+			Conta.hpp Cliente.hpp Loja.hpp ECommerce.hpp
 
 SRC_DIR	=	./src \
 			./src/conta \
@@ -14,7 +14,7 @@ SRC_DIR	=	./src \
 			./src/lista
 SRC		=	main.cpp \
 			Item.cpp Livro.cpp Roupa.cpp Eletronico.cpp \
-			Conta.cpp Cliente.cpp Loja.cpp
+			Conta.cpp Cliente.cpp Loja.cpp ECommerce.cpp
 
 OBJ_DIR	=	./builds
 OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRC))
