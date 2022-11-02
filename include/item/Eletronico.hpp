@@ -15,7 +15,7 @@ class Eletronico : public Item
 
 	public:
 		Eletronico(void);
-		Eletronico(int id, string nome, double preco, string loja,
+		Eletronico(TipoProduto produto, int id, string nome, double preco, string loja,
 			string marca, string modelo, string fabricante, string descricao);
 		~Eletronico(void);
 

@@ -2,16 +2,14 @@
 #define LOJA_HPP
 
 #include "Lista.hpp"
-#include "Livro.hpp"
-#include "Roupa.hpp"
-#include "Eletronico.hpp"
 #include "Conta.hpp"
+#include "Item.hpp"
 
 class Loja : public Conta
 {
 	private:
 		string	cnpj;
-		Lista<Item> produtos;
+		Lista<Item> itens;
 
 	protected:
 
@@ -22,8 +20,11 @@ class Loja : public Conta
 			string cnpj);
 		~Loja(void);
 
+		void	cadastrarItem(Item* item);
+		void	excluirItem(string nome);
+		void	mostrarItens(void);
+
 		void	infos(void);
-		void	addItem(Item *item);
 
 };
 

@@ -32,6 +32,11 @@ class Conta
 			string cep, string complemento, string email, string telefone);
 		virtual ~Conta(void);
 
+		TipoConta	getConta(void);
+		string		getNome(void);
+
+		bool		verificarSenha(string senha);
+
 		virtual void	infos(void) = 0;
 
 };

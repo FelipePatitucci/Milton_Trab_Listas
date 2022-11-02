@@ -3,18 +3,18 @@ INCD_DIR=	-I ./include \
 			-I ./include/conta \
 			-I ./include/item \
 			-I ./include/lista
-INCD	=	include.hpp \
+INCD	=	ECommerce.hpp \
 			Lista.hpp No.hpp \
 			Item.hpp Livro.hpp Roupa.hpp Eletronico.hpp \
-			Conta.hpp Cliente.hpp Loja.hpp ECommerce.hpp
+			Conta.hpp Pedido.hpp Cliente.hpp Loja.hpp
 
 SRC_DIR	=	./src \
 			./src/conta \
 			./src/item \
 			./src/lista
-SRC		=	main.cpp \
+SRC		=	main.cpp ECommerce.cpp \
 			Item.cpp Livro.cpp Roupa.cpp Eletronico.cpp \
-			Conta.cpp Cliente.cpp Loja.cpp ECommerce.cpp
+			Conta.cpp Pedido.cpp Cliente.cpp Loja.cpp
 
 OBJ_DIR	=	./builds
 OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRC))

@@ -16,7 +16,7 @@ class Roupa : public Item
 
 	public:
 		Roupa(void);
-		Roupa(int id, string nome, double preco, string loja,
+		Roupa(TipoProduto produto, int id, string nome, double preco, string loja,
 			string marca, string genero, string tamanho, string cor,
 			string material);
 		~Roupa(void);

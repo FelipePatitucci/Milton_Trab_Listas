@@ -2,36 +2,36 @@
 
 Loja::Loja(void): Conta() {
 	cnpj = "";
+	itens = Lista<Item>();
 }
 
 Loja::Loja(TipoConta conta, string nome, string senha, string estado, string cidade,
 	string cep, string complemento, string email, string telefone, string cnpj):
 	Conta(conta, nome, senha, estado, cidade, cep, complemento, email, telefone) {
 	this->cnpj = cnpj;
+	itens = Lista<Item>();
 }
 
 Loja::~Loja(void) {
 	return ;
 }
 
-void	Loja::infos(void) {
-	cout << "---------------------------" << endl;
-	cout << "Tipo de Conta: " << (conta == CLIENTE? "Cliente" : "Loja") << endl;
-	cout << "---------------------------" << endl;
-	cout << "Nome: " << nome << endl;
-	cout << "Estado: " << estado << endl;
-	cout << "Cidade " << cidade << endl;
-	cout << "Cep " << cep << endl;
-	cout << "Complemento " << complemento << endl;
-	cout << "Email " << email << endl;
-	cout << "Telefone " << telefone << endl;
-	cout << "CNPJ " << cnpj << endl;
-	cout << "Produtos:" << endl;
-	produtos.exibeLista();
-	cout << "---------------------------" << endl << endl;
+void	Loja::cadastrarItem(Item* item) {
+	itens.inserir(item);
 }
 
-void	Loja::addItem(Item *item)
-{
-	produtos.add(item);
+void	Loja::excluirItem(string nome) {
+	itens.deletar(nome);
+}
+
+void	Loja::mostrarItens(void) {
+	itens.exibeLista();
+}
+
+void	Loja::infos(void) {
+	Conta::infos();
+	cout << "| CNPJ: " << cnpj << endl;
+	cout << "| Itens A Venda:" << endl;
+	mostrarItens();
+	cout << "\\___________________________" << endl << endl;
 }
