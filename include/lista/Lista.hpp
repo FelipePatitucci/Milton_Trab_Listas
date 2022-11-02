@@ -6,31 +6,36 @@
 
 using namespace std;
 
-template <typename L>
+template <typename T>
 class Lista
 {
 	private:
 		int		tamanho;
-		No<L>	*topo;
+		No<T>*	topo;
+		No<T>*	fim;
 
 	protected:
 
 	public:
-		Lista(void): tamanho(0), topo(nullptr) {};
+		Lista(void): tamanho(0), topo(nullptr), fim(nullptr) {};
 		~Lista(void);
 
-		void	add(L *novo);
-		L*		get(int index);
-		int		len(void);
+		int		getTamanho(void);
+		T*		getNo(int index);
+
+		void	inserir(T* novo);
+		T*		buscar(string nome);
+		void	deletar(string nome);
+
 		void	exibeLista(void);
 
 };
 
-template <typename L>
-Lista<L>::~Lista()
+template <typename T>
+Lista<T>::~Lista(void)
 {
-	No<L>*	aux1 = nullptr;
-	No<L>*	aux2 = nullptr;
+	No<T>*	aux1 = nullptr;
+	No<T>*	aux2 = nullptr;
 
 	if (topo == nullptr)
 		return;
@@ -42,27 +47,16 @@ Lista<L>::~Lista()
 		aux1 = aux2;
 	}
 	topo = nullptr;
-}
+};
 
-template <typename L>
-void	Lista<L>::add(L *novo)
+template <typename T>
+int		Lista<T>::getTamanho(void)
 {
-	No<L>*	noNovo = new No<L>(novo);
-	No<L>*	aux;
-
-	if (topo == nullptr)
-		topo = noNovo;
-	else {
-		aux = topo;
-		while (aux->prox)
-			aux = aux->prox;
-		aux->prox = noNovo;
-	}
-	tamanho++;
+	return tamanho;
 }
 
 template <typename L>
-L*		Lista<L>::get(int index)
+L*		Lista<L>::getNo(int index)
 {
 	No<L>*	aux =	nullptr;
 
@@ -77,16 +71,86 @@ L*		Lista<L>::get(int index)
 		return nullptr;
 }
 
-template <typename L>
-int		Lista<L>::len(void)
+template <typename T>
+void	Lista<T>::inserir(T *novo)
 {
-	return tamanho;
-}
+	No<T>*	noNovo = new No<T>(novo);
 
-template <typename L>
-void	Lista<L>::exibeLista(void)
+	if (topo == nullptr)
+	{
+		topo = noNovo;
+		fim = noNovo;
+	}
+	else
+	{
+		fim->prox = noNovo;
+		noNovo->prev = fim;
+		fim = noNovo;
+	}
+	tamanho++;
+};
+
+template <typename T>
+T*		Lista<T>::buscar(string nome)
 {
-	No<L>*	aux = nullptr;
+	No<T>*	aux =	nullptr;
+
+	aux = topo;
+	while (aux)
+	{
+		if (aux->item->getNome() == nome)
+			break;
+		aux = aux->prox;
+	}
+	if (aux)
+		return aux->item;
+	else
+		return nullptr;
+};
+
+template <typename T>
+void	Lista<T>::deletar(string nome)
+{
+	No<T>*	aux1 =	nullptr;
+
+	aux1 = topo;
+	while (aux1)
+	{
+		if (aux1->item->getNome() == nome)
+			break;
+		aux1 = aux1->prox;
+	}
+	if (aux1)
+	{
+		if (topo == fim)
+		{
+			topo = nullptr;
+			fim = nullptr;
+		}
+		else if (aux1->prev == nullptr)
+		{
+			topo = aux1->prox;
+			topo->prev = nullptr;
+		}
+		else if (aux1->prox == nullptr)
+		{
+			fim = aux1->prev;
+			fim->prox = nullptr;
+		}
+		else
+		{
+			aux1->prev->prox = aux1->prox;
+			aux1->prox->prev = aux1->prev;
+		}
+		delete aux1;
+		tamanho--;
+	}
+};
+
+template <typename T>
+void	Lista<T>::exibeLista(void)
+{
+	No<T>*	aux = nullptr;
 
 	aux = topo;
 	while (aux)
@@ -94,6 +158,6 @@ void	Lista<L>::exibeLista(void)
 		aux->item->infos();
 		aux = aux->prox;
 	}
-}
+};
 
 #endif

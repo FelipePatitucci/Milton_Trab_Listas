@@ -1,13 +1,16 @@
 #ifndef ECOMMERCE_HPP
 #define ECOMMERCE_HPP
 
+#include "Livro.hpp"
+#include "Roupa.hpp"
+#include "Eletronico.hpp"
+
 #include "Cliente.hpp"
 #include "Loja.hpp"
 
 class ECommerce
 {
 	private:
-		TipoConta		contaLogada;
 		Lista<Conta>	listaContas;
 
 	protected:
@@ -16,11 +19,16 @@ class ECommerce
 		ECommerce(void);
 		~ECommerce(void);
 
+		void	menuInicial(void);
+
+
+	private:
 		void	cabecalhoInicial(void);
 
-		void	menuInicial(void);
 		void	menuLogin(void);
-		void	menuCadastro(void);
+
+		Conta*	buscarConta(void);
+		bool	acessarConta(Conta* conta);
 
 };
 

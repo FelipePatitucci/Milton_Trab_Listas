@@ -3,8 +3,6 @@
 
 #include "Item.hpp"
 
-using namespace std;
-
 class Livro : public Item
 {
 	private:
@@ -18,7 +16,7 @@ class Livro : public Item
 
 	public:
 		Livro(void);
-		Livro(int id, string nome, double preco, string loja,
+		Livro(TipoProduto produto, int id, string nome, double preco, string loja,
 			string autor, int numeroPaginas, string genero, string idioma,
 			int anoLancamento);
 		~Livro(void);

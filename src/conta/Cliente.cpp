@@ -4,6 +4,7 @@ Cliente::Cliente(void): Conta() {
 	cpf = "";
 	carteira = 0.0;
 	cartaoConfigurado = "";
+	pedido = Pedido();
 }
 
 Cliente::Cliente(TipoConta conta, string nome, string senha, string estado, string cidade,
@@ -13,24 +14,31 @@ Cliente::Cliente(TipoConta conta, string nome, string senha, string estado, stri
 	this->cpf = cpf;
 	this->carteira = carteira;
 	this->cartaoConfigurado = cartaoConfigurado;
+	this->pedido = Pedido(nome);
 }
 
 Cliente::~Cliente(void) {
 	return ;
 }
 
+void	Cliente::comprarItem(Item* item) {
+	pedido.adicionarItem(item);
+}
+
+void	Cliente::cancelarItem(string nome) {
+	pedido.excluirItem(nome);
+}
+
+void	Cliente::mostrarPedido(void) {
+	pedido.info();
+}
+
 void Cliente::infos(void) {
-	cout << "---------------------------" << endl;
-	cout << "Tipo de Conta: " << (conta == CLIENTE? "Cliente" : "Loja") << endl;
-	cout << "---------------------------" << endl;
-	cout << "Nome: " << nome << endl;
-	cout << "Estado: " << estado << endl;
-	cout << "Cidade " << cidade << endl;
-	cout << "Cep " << cep << endl;
-	cout << "Complemento " << complemento << endl;
-	cout << "Email " << email << endl;
-	cout << "Telefone " << telefone << endl;
-	cout << "CPF " << cpf << endl;
-	cout << "Carteira " << carteira << endl;
-	cout << "---------------------------" << endl;
+	Conta::infos();
+	cout << "| CPF: " << cpf << endl;
+	cout << "| Carteira: R$ " << carteira << endl;
+	cout << "| Pedido:" << endl;
+	cout << "|" << endl;
+	pedido.info();
+	cout << "\\___________________________" << endl << endl;
 }

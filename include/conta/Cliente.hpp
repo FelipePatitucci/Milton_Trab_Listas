@@ -2,6 +2,7 @@
 #define CLIENTE_HPP
 
 #include "Conta.hpp"
+#include "Pedido.hpp"
 
 class Cliente : public Conta
 {
@@ -9,6 +10,7 @@ class Cliente : public Conta
 		string	cpf;
 		double	carteira;
 		string	cartaoConfigurado;
+		Pedido	pedido;
 
 	protected:
 
@@ -18,6 +20,10 @@ class Cliente : public Conta
 			string cep, string complemento, string email, string telefone,
 			string cpf, double carteira, string cartaoConfigurado);
 		~Cliente(void);
+
+		void	comprarItem(Item* item);
+		void	cancelarItem(string nome);
+		void	mostrarPedido(void);
 
 		void	infos(void);
 
