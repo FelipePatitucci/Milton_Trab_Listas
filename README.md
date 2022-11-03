@@ -31,7 +31,6 @@ melhorar a descrição etc).
 
 **1. Gerenciar as contas criadas. Portanto, devemos permitir operações de:**
 - Criação de novas contas
-- Alteração de dados nas contas criadas
 - Acesso a cada conta por meio de login usando dados cadastrados
 
 **2. Contas devem possuir um atributo que atue como chave primária.**
@@ -39,11 +38,11 @@ melhorar a descrição etc).
 - Para contas de lojas, será o CNPJ
 
 **3. Especificamente para clientes:**
-- Possibilidade de buscar por: loja(nome), tipo e nome de produto
+- Possibilidade de buscar por loja(nome)
 - Fazer um pedido que tenha diferentes produtos
 - Modificar o pedido(excluir um item ou adicionar outro)
 - Verificar o valor total do pedido, assim como todos os itens
-- Consultar pedidos antigos
+- Consultar pedido
 
 **4. Especificamente para lojas:**
 - Possibilidade de alterar informações sobre seus produtos cadastrados
